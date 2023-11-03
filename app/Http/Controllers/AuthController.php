@@ -43,7 +43,7 @@ class AuthController extends Controller
             $total_student = Student::count();
             $total_enrollment = PreEnrollment::count();
             //dd($total_course, $total_student, $total_enrollment);
-            return view('admin.home', compact('total_course', 'total_student', 'total_enrollment'));
+            return view('Admin.home', compact('total_course', 'total_student', 'total_enrollment'));
         }
         else {
             return view('student.home');
