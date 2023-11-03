@@ -10,7 +10,7 @@ use Hash;
 class StudentController extends Controller
 {
     public function register(){
-        return view('admin.student.studentRegister');
+        return view('Admin.student.studentRegister');
     }
 
     public function store(Request $req){
@@ -63,12 +63,12 @@ class StudentController extends Controller
 
     public function all(){
         $students = Student::all();
-        return view('admin.student.all', compact('students'));
+        return view('Admin.student.all', compact('students'));
     }
 
     public function edit($id){
         $student = Student::where('id', $id)->first();
-        return view('admin.student.edit', compact('student'));
+        return view('Admin.student.edit', compact('student'));
     }
 
     public function update(Request $req, $id){

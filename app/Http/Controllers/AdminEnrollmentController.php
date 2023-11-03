@@ -13,12 +13,12 @@ class AdminEnrollmentController extends Controller
 {
     public function courseLimit(){
         $limitations = CourseLimitation::all();
-        return view('admin.enrollment.course_limitation', compact('limitations'));
+        return view('Admin.enrollment.course_limitation', compact('limitations'));
     }
 
     public function editLimit($id){
         $limit = CourseLimitation::find($id);
-        return view('admin.enrollment.edit_course_limit', compact('limit'));
+        return view('Admin.enrollment.edit_course_limit', compact('limit'));
     }
 
     public function updateLimit(Request $req, $id){
@@ -31,7 +31,7 @@ class AdminEnrollmentController extends Controller
 
     public function overlap(){
         $session = Session::select('id', 'name')->where("status", "=", "Running")->get();
-        return view('admin.enrollment.overlap_list',compact('session'));
+        return view('Admin.enrollment.overlap_list',compact('session'));
     }
 
     public function overlaplist(Request $req, $session)
@@ -130,7 +130,7 @@ class AdminEnrollmentController extends Controller
         //arsort($real);
        //dd($course, $over, $problem, $real);
 
-        //return view('admin.enrollment.overlap_list', compact('course', 'session', 'real'));
+        //return view('Admin.enrollment.overlap_list', compact('course', 'session', 'real'));
 
         return response()->json([
             'data'=>$real,

@@ -9,7 +9,7 @@ class SessionController extends Controller
 {
     public function createSession()
     {
-        return view('admin.session.create_session');
+        return view('Admin.session.create_session');
     }
 
     public function store(request $req)
@@ -28,13 +28,13 @@ class SessionController extends Controller
     public function sessionlist()
     {
         $sessions = Session::all();
-        return view('admin.session.all_sessions', compact('sessions'));
+        return view('Admin.session.all_sessions', compact('sessions'));
     }
 
     public function edit($id)
     {
         $session = Session::find($id);
-        return view('admin.session.edit_session', compact('session'));
+        return view('Admin.session.edit_session', compact('session'));
     }
 
     public function update(Request $req, $id)

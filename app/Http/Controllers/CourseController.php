@@ -9,7 +9,7 @@ class CourseController extends Controller
 {
     public function createCourse()
     {
-        return view('admin.course.create_course');
+        return view('Admin.course.create_course');
     }
 
     public function store(request $req)
@@ -31,13 +31,13 @@ class CourseController extends Controller
     public function courselist()
     {
         $courses = Course::all();
-        return view('admin.course.all_course', compact('courses'));
+        return view('Admin.course.all_course', compact('courses'));
     }
 
     public function edit($id)
     {
         $course = Course::find($id);
-        return view('admin.course.edit_course', compact('course'));
+        return view('Admin.course.edit_course', compact('course'));
     }
 
     public function update(Request $req, $id)
